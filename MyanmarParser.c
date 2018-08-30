@@ -189,8 +189,8 @@ int CHAR_PART[] = {
 
 int get_char_class(wchar_t ch)
 {
-    if (0x1000 > ch || ch > 0x109F) {
-        if (0xAA60 <= ch || ch < 0xAA7C) {
+    if (ch < 0x1000 || ch > 0x109F) {
+        if (ch >= 0xAA60 && ch < 0xAA7C) {
             if (ch == 0xAA70) {
                 return MY_SYLLABLE_TONE;
             } else if (ch == 0xAA7B) {
